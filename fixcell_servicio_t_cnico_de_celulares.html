@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixCell - Servicio Técnico de Celulares</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#080c14',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            neon: '#a3e635',
+                            neonHover: '#84cc16',
+                            cyan: '#06b6d4',
+                            accent: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f8fafc;
+        }
+        .glow-neon {
+            box-shadow: 0 0 25px rgba(163, 230, 53, 0.25);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 antialiased min-h-screen flex flex-col selection:bg-brand-neon selection:text-black">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight text-white">Fix<span class="text-brand-neon">Cell</span></span>
+                </a>
+
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#servicios" class="hover:text-brand-neon transition-colors">Servicios</a>
+                    <a href="#precios" class="hover:text-brand-neon transition-colors">Precios</a>
+                    <a href="#local" class="hover:text-brand-neon transition-colors">El local</a>
+                    <a href="#contacto" class="hover:text-brand-neon transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/5491100000000?text=Hola%20FixCell,%20quiero%20hacer%20una%20consulta." target="_blank" class="bg-brand-neon hover:bg-brand-neonHover text-slate-950 font-bold px-5 py-2.5 rounded-full flex items-center gap-2 text-sm transition-all shadow-lg hover:shadow-brand-neon/20 hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Escribinos
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 text-slate-300 hover:text-brand-neon">Servicios</a>
+            <a href="#precios" class="block py-2 text-slate-300 hover:text-brand-neon">Precios</a>
+            <a href="#local" class="block py-2 text-slate-300 hover:text-brand-neon">El local</a>
+            <a href="#contacto" class="block py-2 text-slate-300 hover:text-brand-neon">Contacto</a>
+            <a href="https://wa.me/5491100000000?text=Hola%20FixCell,%20quiero%20hacer%20una%20consulta." target="_blank" class="w-full mt-2 bg-brand-neon text-slate-950 font-bold py-3 rounded-full flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Escribinos
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="inicio" class="relative overflow-hidden bg-grid-pattern pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-slate-800/50">
+            <!-- Ambient Glow Effects -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-cyan/10 blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="absolute top-1/3 left-1/3 w-[400px] h-[300px] bg-brand-neon/10 blur-[140px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <!-- Text Side -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-brand-neon text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-bolt text-brand-neon"></i> Servicio técnico de celulares
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                            Tu celular,<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-neon to-brand-neon">como nuevo</span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Pantallas, baterías, pin de carga y mucho más. Reparaciones rápidas, repuestos de calidad y garantía en cada trabajo.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#contacto" class="w-full sm:w-auto bg-brand-neon hover:bg-brand-neonHover text-slate-950 font-extrabold px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-brand-neon/20 hover:scale-105">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                Pedí tu presupuesto
+                            </a>
+                            <a href="#precios" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-500 font-bold px-8 py-4 rounded-full flex items-center justify-center transition-all">
+                                Ver precios
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Tech Smartphone Hero Graphic -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="relative mx-auto rounded-[2.5rem] bg-gradient-to-b from-slate-800 to-slate-900 p-4 border border-slate-700/60 shadow-2xl glow-cyan">
+                                <!-- Phone Illustration Visual -->
+                                <div class="bg-slate-950 rounded-[2rem] p-6 relative overflow-hidden border border-slate-800">
+                                    <div class="flex justify-between items-center pb-4 border-b border-slate-800 text-xs text-slate-400">
+                                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-microchip text-brand-cyan"></i> Hardware OK</span>
+                                        <span class="flex items-center gap-1 text-brand-neon"><i class="fa-solid fa-circle text-[8px]"></i> En Reparación</span>
+                                    </div>
+                                    <div class="py-8 my-2 flex flex-col items-center justify-center text-center space-y-4">
+                                        <div class="relative">
+                                            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-cyan/20 to-brand-neon/20 border border-brand-neon/40 flex items-center justify-center text-brand-neon animate-pulse">
+                                                <i class="fa-solid fa-mobile-screen-button text-5xl"></i>
+                                            </div>
+                                            <div class="absolute -bottom-2 -right-2 bg-brand-neon text-slate-950 p-2 rounded-lg text-xs font-bold shadow">
+                                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-white font-bold text-lg">Diagnóstico FixCell</h3>
+                                            <p class="text-xs text-slate-400 mt-1">Repuesto Original Calidad A+</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                            <i class="fa-solid fa-shield-halved text-brand-neon"></i>
+                                            <span class="text-slate-300">Garantía 90 días</span>
+                                        </div>
+                                        <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2">
+                                            <i class="fa-solid fa-clock text-brand-cyan"></i>
+                                            <span class="text-slate-300">En menos de 2hs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Highlights Strip -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-10 border-t border-slate-800/80">
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                        <div class="text-brand-neon text-xl mt-0.5"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Reparación en el día</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">La mayoría en menos de 2 hs</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                        <div class="text-brand-neon text-xl mt-0.5"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Garantía</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">90 días en cada reparación</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                        <div class="text-brand-cyan text-xl mt-0.5"><i class="fa-solid fa-mobile-button"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Todas las marcas</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">iPhone, Samsung, Motorola...</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                        <div class="text-brand-neon text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Diagnóstico gratis</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Si reparás con nosotros</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-20 border-b border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-left mb-14">
+                    <span class="text-brand-cyan font-bold text-xs uppercase tracking-widest block mb-2">Servicios</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Arreglamos lo que le pase a tu celular
+                    </h2>
+                    <p class="text-slate-400 mt-3 text-base max-w-2xl">
+                        Trabajamos con repuestos de calidad y te explicamos todo antes de empezar. Sin sorpresas.
+                    </p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cambio de pantalla</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Vidrio roto, táctil que no responde o manchas en el display. Repuestos de calidad original.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> Desde 1 hora
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-battery-half"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cambio de batería</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            ¿Se descarga rápido o se apaga solo? Recuperá la autonomía del primer día.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> 30–45 min
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-plug-glow"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Pin de carga</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            No carga, carga lento o hay que mover el cable. Limpieza o reemplazo del conector.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> Desde 1 hora
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cámaras</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Fotos borrosas, lente rayado o cámara que no enfoca. Frontal y trasera.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> Desde 1 hora
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Daño por agua</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Limpieza ultrasónica y diagnóstico de placa. Cuanto antes lo traigas, mejor.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> 24–48 hs
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 text-brand-cyan flex items-center justify-center text-xl mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Software y desbloqueo</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Actualizaciones, celular lento, restauración de sistema y respaldo de datos.
+                        </p>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-neon">
+                            <i class="fa-regular fa-clock"></i> En el día
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="precios" class="py-20 border-b border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left Side Header & CTA -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-brand-cyan font-bold text-xs uppercase tracking-widest block">Lista de precios</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                            Precios claros, desde el primer momento
+                        </h2>
+                        <p class="text-slate-400 text-base leading-relaxed">
+                            Elegí una categoría para ver los valores de referencia. ¿No encontrás tu modelo? Consultanos.
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20el%20precio%20de%20reparacion%20para%20mi%20modelo" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-brand-neon text-white font-bold px-6 py-3.5 rounded-full text-sm transition-all">
+                                <i class="fa-brands fa-whatsapp text-brand-neon text-lg"></i>
+                                Consultar mi modelo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Interactive Price Cards Container -->
+                    <div class="lg:col-span-7 bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8">
+                        <!-- Navigation Tabs -->
+                        <div class="flex items-center gap-2 mb-8 bg-slate-950 p-1.5 rounded-full border border-slate-800 max-w-md">
+                            <button id="tab-pantallas" onclick="switchPriceTab('pantallas')" class="tab-btn flex-1 py-2 px-4 rounded-full text-xs sm:text-sm font-bold transition-all bg-brand-cyan text-slate-950">
+                                Pantallas
+                            </button>
+                            <button id="tab-baterias" onclick="switchPriceTab('baterias')" class="tab-btn flex-1 py-2 px-4 rounded-full text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition-all">
+                                Baterías
+                            </button>
+                            <button id="tab-otros" onclick="switchPriceTab('otros')" class="tab-btn flex-1 py-2 px-4 rounded-full text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition-all">
+                                Otros
+                            </button>
+                        </div>
+
+                        <!-- Tab Content: Pantallas -->
+                        <div id="content-pantallas" class="price-tab-content space-y-4">
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pantalla iPhone</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">iPhone 11 a 16</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 85.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pantalla%20iPhone" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pantalla Samsung Serie A</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">A14, A24, A34, A54...</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 55.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pantalla%20Samsung%20Serie%20A" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pantalla Samsung Serie S</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">S21 a S25</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 150.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pantalla%20Samsung%20Serie%20S" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pantalla Motorola</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Moto G y Edge</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 45.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pantalla%20Motorola" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pantalla Xiaomi / Redmi</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Redmi Note, Poco</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 48.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pantalla%20Xiaomi" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content: Baterias -->
+                        <div id="content-baterias" class="price-tab-content space-y-4 hidden">
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Batería iPhone</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Celdas de alta calidad original</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 38.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Bateria%20iPhone" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Batería Samsung Serie A / M</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Carga rápida optimizada</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 28.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Bateria%20Samsung" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Batería Motorola Moto G / Edge</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Repuesto de alta densidad</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 26.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Bateria%20Motorola" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content: Otros -->
+                        <div id="content-otros" class="price-tab-content space-y-4 hidden">
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Pin de Carga / Conector</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Limpieza y reemplazo</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 22.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Pin%20de%20carga" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-between hover:border-slate-700 transition-colors">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Mantenimiento por Agua</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Baño de ultrasonido</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right">
+                                        <span class="text-[10px] text-slate-400 uppercase tracking-wider block">DESDE</span>
+                                        <span class="text-lg font-extrabold text-brand-neon">$ 25.000</span>
+                                    </div>
+                                    <a href="https://wa.me/5491100000000?text=Consulta%20por%20Reparacion%20por%20agua" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brand-neon hover:bg-slate-700 transition-colors">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-slate-500 mt-6 text-center lg:text-left">
+                            Precios orientativos. El valor final depende del modelo exacto — pedinos tu presupuesto sin compromiso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="local" class="py-20 border-b border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-left mb-12">
+                    <span class="text-brand-cyan font-bold text-xs uppercase tracking-widest block mb-2">El Local</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Vení a visitarnos
+                    </h2>
+                    <p class="text-slate-400 mt-2 text-base">
+                        Traé tu celular y te hacemos el diagnóstico en el momento.
+                    </p>
+                </div>
+
+                <!-- Grid Layout -->
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Tech Shop Photo Preview -->
+                    <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden min-h-[280px] relative flex flex-col justify-end p-6">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Técnico de FixCell en el taller" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity">
+                        <div class="relative z-10 bg-slate-950/80 backdrop-blur-sm p-4 rounded-2xl border border-slate-800">
+                            <h4 class="text-white font-bold text-sm">Taller de servicio técnico especializado</h4>
+                            <p class="text-xs text-slate-400 mt-1">Atención personalizada y diagnóstico inmediato en mostrador.</p>
+                        </div>
+                    </div>
+
+                    <!-- Details & Map Preview -->
+                    <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Card Dirección -->
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6">
+                                <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-lg mb-4">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-1">Dirección</h3>
+                                <p class="text-sm text-slate-300">Av. Siempre Viva 742, Local 3</p>
+                                <p class="text-xs text-slate-400 mt-0.5">Buenos Aires</p>
+                                <a href="https://maps.google.com/?q=Av.+Siempre+Viva+742+Buenos+Aires" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-brand-cyan hover:underline mt-4">
+                                    Cómo llegar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+
+                            <!-- Card Horarios -->
+                            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6">
+                                <div class="w-10 h-10 rounded-xl bg-brand-neon/10 text-brand-neon flex items-center justify-center text-lg mb-4">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-3">Horarios</h3>
+                                <div class="space-y-1.5 text-xs">
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-400">Lunes a Viernes</span>
+                                        <span class="text-white font-semibold">9:00 – 19:00</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-400">Sábados</span>
+                                        <span class="text-white font-semibold">10:00 – 14:00</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-400">Domingos</span>
+                                        <span class="text-red-400 font-semibold">Cerrado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dark Map Placeholder -->
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 h-52 flex items-center justify-center">
+                            <!-- Dark Map Styled Canvas Background -->
+                            <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
+                            <div class="relative z-10 text-center px-4">
+                                <div class="w-12 h-12 rounded-full bg-brand-neon/20 border border-brand-neon text-brand-neon flex items-center justify-center mx-auto mb-3 text-xl animate-bounce">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-sm">Local FixCell Buenos Aires</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Av. Siempre Viva 742</p>
+                                <a href="https://maps.google.com/?q=Av.+Siempre+Viva+742+Buenos+Aires" target="_blank" class="mt-3 inline-block bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Abrir en Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+                    <div class="text-center mb-10">
+                        <span class="text-brand-neon font-bold text-xs uppercase tracking-widest block mb-2">Contacto directo</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Solicitá tu presupuesto en minutos</h2>
+                        <p class="text-slate-400 text-sm mt-2">Completá tus datos y recibí una cotización estimada al instante por WhatsApp.</p>
+                    </div>
+
+                    <form id="quote-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Marca de tu equipo</label>
+                                <select id="form-brand" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-neon">
+                                    <option>iPhone</option>
+                                    <option>Samsung</option>
+                                    <option>Motorola</option>
+                                    <option>Xiaomi / Redmi</option>
+                                    <option>Otra marca</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Problema o servicio</label>
+                                <select id="form-service" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-neon">
+                                    <option>Cambio de pantalla</option>
+                                    <option>Cambio de batería</option>
+                                    <option>Pin de carga</option>
+                                    <option>Cámara</option>
+                                    <option>Mojado / Agua</option>
+                                    <option>Software / Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Tu Nombre</label>
+                                <input type="text" id="form-name" required placeholder="Ej. Carlos Pérez" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-neon">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Modelo exacto (Opcional)</label>
+                                <input type="text" id="form-model" placeholder="Ej. Galaxy A54 / iPhone 13" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-neon">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">Detalles adicionales</label>
+                            <textarea id="form-details" rows="3" placeholder="Describe brevemente la falla..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-neon"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-neon hover:bg-brand-neonHover text-slate-950 font-extrabold py-4 rounded-xl text-base flex items-center justify-center gap-2 shadow-lg transition-all hover:scale-[1.01]">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Enviar consulta por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon">
+                        <i class="fa-solid fa-bolt text-sm"></i>
+                    </div>
+                    <span class="text-xl font-extrabold text-white">Fix<span class="text-brand-neon">Cell</span></span>
+                </div>
+
+                <p>© 2026 FixCell - Servicio Técnico Especializado en Celulares. Todos los derechos reservados.</p>
+
+                <div class="flex items-center space-x-4 text-base">
+                    <a href="#" class="hover:text-brand-neon transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand-neon transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5491100000000" target="_blank" class="hover:text-brand-neon transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switcher for Price List
+        function switchPriceTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.price-tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Reset tab buttons styling
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-cyan', 'text-slate-950');
+                btn.classList.add('text-slate-400');
+            });
+
+            // Show selected tab content
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+
+            // Highlight selected tab button
+            const activeBtn = document.getElementById('tab-' + tabName);
+            activeBtn.classList.add('bg-brand-cyan', 'text-slate-950');
+            activeBtn.classList.remove('text-slate-400');
+        }
+
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submit Handler -> Redirects to WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const brand = document.getElementById('form-brand').value;
+            const service = document.getElementById('form-service').value;
+            const name = document.getElementById('form-name').value;
+            const model = document.getElementById('form-model').value || 'No especificado';
+            const details = document.getElementById('form-details').value || 'Sin detalles extra';
+
+            const message = `Hola FixCell! Mi nombre es ${name}. Quisiera pedir un presupuesto:%0A%0A📱 Marca: ${brand}%0A🔧 Servicio: ${service}%0A📐 Modelo: ${model}%0A📝 Detalle: ${details}`;
+            
+            window.open(`https://wa.me/5491100000000?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
